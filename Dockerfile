@@ -1,5 +1,5 @@
 FROM golang:1.15.7-alpine3.13 as builder
-WORKDIR /go/src/github.com/nothinux/karsajobs
+WORKDIR /go/src/github.com/nothinux/go-httpserver
 ENV GO111MODULE=on
 COPY . .
 RUN go mod download
@@ -12,4 +12,4 @@ WORKDIR /app
 RUN mkdir /static
 COPY --from=builder /build/go-httpserver .
 EXPOSE 8080
-CMD ["./app/go-httpserver -workdir /static"]
+CMD ["/app/go-httpserver", "-dir", "/static"]

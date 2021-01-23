@@ -17,5 +17,10 @@ run go-httpserver and serving `static` directory
 go-httpserver -dir static
 ```
 
+run go-httpserver with Docker
+```
+docker run -d -v <directory>:/static -p 8080:8080 nothinux/go-httpserver:latest
+```
+
 ### LICENSE
 view [LICENSE](https://github.com/nothinux/go-httpserver/blob/main/LICENSE) file

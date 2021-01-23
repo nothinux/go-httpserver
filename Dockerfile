@@ -9,6 +9,7 @@ RUN mkdir /build; \
 
 FROM alpine:latest
 WORKDIR /app
+RUN mkdir /static
 COPY --from=builder /build/go-httpserver .
 EXPOSE 8080
-CMD ["./app/go-httpserver"]
+CMD ["./app/go-httpserver -workdir /static"]

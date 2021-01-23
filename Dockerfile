@@ -1,4 +1,4 @@
-FROM golang:1.15.7-alpine3-13 as builder
+FROM golang:1.15.7-alpine3.13 as builder
 WORKDIR /go/src/github.com/nothinux/karsajobs
 ENV GO111MODULE=on
 COPY . .

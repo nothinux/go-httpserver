@@ -7,7 +7,7 @@ RUN mkdir /build; \
     go build -o /build/ ./...
 
 
-FROM alpine:3.13.4
+FROM alpine:3.13.5
 WORKDIR /app
 RUN mkdir /static
 COPY --from=builder /build/go-httpserver .
